@@ -23,7 +23,6 @@
     "@lit-protocol/lit-node-client": "^6.11.3",
     "@ngrok/ngrok": "^1.4.1",
     "@solana/web3.js": "^1.98.0",
-    "langchain": "^0.0.84",
     "@useorbis/db-sdk": "0.0.60-alpha",
     "axios": "^1.7.7",
     "better-sqlite3": "^11.6.0",
