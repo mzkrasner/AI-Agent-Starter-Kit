@@ -1,6 +1,5 @@
 import { ethers as Ethers } from "ethers";
 import { DID } from "dids";
-import elliptic from "elliptic";
 import {
   encodeDIDWithLit,
   Secp256k1ProviderWithLit,
@@ -398,9 +397,6 @@ declare global {
 
   export type DID = DID;
   export const DID: typeof DID;
-
-  export type elliptic = elliptic;
-  export const elliptic: typeof elliptic;
 
   export type encodeDIDWithLit = encodeDIDWithLit;
   export const encodeDIDWithLit: typeof encodeDIDWithLit;
