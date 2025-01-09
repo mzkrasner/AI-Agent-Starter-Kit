@@ -1,4 +1,10 @@
 import { ethers as Ethers } from "ethers";
+import { DID } from "dids";
+import elliptic from "elliptic";
+import {
+  encodeDIDWithLit,
+  Secp256k1ProviderWithLit,
+} from "key-did-provider-secp256k1-with-lit";
 
 declare global {
   export declare namespace Lit {
@@ -389,6 +395,18 @@ declare global {
   // TODO: add custom shims here
   export type Buffer = Buffer;
   export const Buffer: typeof Buffer;
+
+  export type DID = DID;
+  export const DID: typeof DID;
+
+  export type elliptic = elliptic;
+  export const elliptic: typeof elliptic;
+
+  export type encodeDIDWithLit = encodeDIDWithLit;
+  export const encodeDIDWithLit: typeof encodeDIDWithLit;
+
+  export type Secp256k1ProviderWithLit = Secp256k1ProviderWithLit;
+  export const Secp256k1ProviderWithLit: typeof Secp256k1ProviderWithLit;
 
   // TODO: JSParams go here
   const helloName: string;

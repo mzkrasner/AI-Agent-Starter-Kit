@@ -3,26 +3,18 @@
 
 const go = async () => {
   // Prints out the Lit Auth context
-  console.log("[action] Lit.Auth:", Lit.Auth);
-  // Converts the public key to a token ID
-  const tokenId = await Lit.Actions.pubkeyToTokenId({ publicKey });
-  console.log("[action] tokenId:", tokenId);
-  // Gets the permitted auth methods for the token ID
-  const permittedAuthMethods = await Lit.Actions.getPermittedAuthMethods({
-    tokenId,
-  });
-  console.log("[action] permittedAuthMethods:", permittedAuthMethods);
-  // Signs the ECDSA signature
-  const signature = await Lit.Actions.signEcdsa({ publicKey, toSign, sigName });
+
+  console.log("publickey", publicKey);
+
+  const encodedDID = await encodeDIDWithLit(publicKey);
   // Sets the response to the Lit Actions context
   Lit.Actions.setResponse({
     response: JSON.stringify({
-      HelloName: helloName,
-      timestamp: Date.now().toString(),
+      encodedDID,
     }),
   });
   // Returns the signature
-  return signature;
+  return encodedDID;
 };
 
 go();
